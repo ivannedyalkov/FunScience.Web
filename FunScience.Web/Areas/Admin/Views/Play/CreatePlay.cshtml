@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Добавяне на пиеса";
+    ViewData.AddActivePage(AdminNavPages.CreatePlay);
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@Html.Partial("_CreateEditPlay")
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

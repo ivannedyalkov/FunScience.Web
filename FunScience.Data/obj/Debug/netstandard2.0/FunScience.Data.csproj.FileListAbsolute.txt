@@ -1,0 +1,9 @@
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\bin\Debug\netstandard2.0\FunScience.Data.deps.json
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\bin\Debug\netstandard2.0\FunScience.Data.dll
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.csprojResolveAssemblyReference.cache
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.AssemblyInfoInputs.cache
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.AssemblyInfo.cs
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\bin\Debug\netstandard2.0\FunScience.Data.pdb
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.dll
+C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Data\obj\Debug\netstandard2.0\FunScience.Data.pdb

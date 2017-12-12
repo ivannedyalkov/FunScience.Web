@@ -1,0 +1,16 @@
+﻿@model SchoolListingModel
+
+@{
+    ViewData["Title"] = "Изтриване на училище";
+}
+
+<h2>Изтриване</h2>
+
+<h4>Сигурни ли сте, че искате да изтрите @Model.Name.</h4>
+<form method="post" asp-area="Admin" asp-controller="School" asp-action="Destroy">
+    <input type="hidden" asp-for=@Model.Id />
+    <button type="submit" class="btn btn-danger">Да</button>
+    <a class="btn btn-success" href="/Admin/School/Schools">Не</a>
+</form>
+
+

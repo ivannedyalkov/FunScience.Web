@@ -1,0 +1,19 @@
+﻿
+@inject SignInManager<User> SignInManager
+
+@if (User.IsInRole(GlobalConstants.AdministratorRole))
+{
+    <ul class="nav nav-pills nav-stacked">
+        <li class="@AdminNavPages.RegisterNavClass(ViewContext)"><a asp-area="Admin" asp-controller="User" asp-action="Register">Добави нов служител</a></li>
+        <li class="@AdminNavPages.IndexNavClass(ViewContext)"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Всички служители</a></li>
+        <li><hr /></li>
+        <li class="@AdminNavPages.SchoolNavClass(ViewContext)"><a asp-area="Admin" asp-controller="School" asp-action="AddSchool">Добави ново училище</a></li>
+        <li class="@AdminNavPages.SchoolsNavClass(ViewContext)"><a asp-area="Admin" asp-controller="School" asp-action="Schools">Списък с училища</a></li>
+        <li><hr /></li>
+        <li class="@AdminNavPages.CreatePlayNavClass(ViewContext)"><a asp-area="Admin" asp-controller="Play" asp-action="CreatePlay">Добави нова пиеса</a></li>
+        <li class="@AdminNavPages.PlaysNavClass(ViewContext)"><a asp-area="Admin" asp-controller="Play" asp-action="Plays">Списък с пиеси</a></li>
+    </ul>
+
+}
+
+

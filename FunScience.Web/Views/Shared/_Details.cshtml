@@ -1,0 +1,111 @@
+﻿@model DetailsUserViewModel
+
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+<div class="row">
+    <div class="col-md-10">
+        <form class="form-horizontal" enctype="multipart/form-data" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <div style="text-align: center" asp-validation-summary="All" class="text-danger"></div>
+                    <label class="col-md-4 control-label" asp-for="FirstName"></label>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user fa-fw">
+                                </i>
+                            </div>
+                            <input type="text" class="form-control input-md" placeholder="Име" asp-for="FirstName">
+                        </div>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="LastName"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user fa-fw">
+                                </i>
+                            </div>
+                            <input type="text" class="form-control input-md" placeholder="Фамиля" asp-for="LastName">
+                        </div>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="PhoneNumber"></label>
+                    <div class="col-md-4">
+                        <div class="input-group othertop">
+                            <div class="input-group-addon">
+                                <i class="fa fa-phone fa-fw"></i>
+                            </div>
+                            <input type="number" placeholder="Телефон" class="form-control input-md" asp-for="PhoneNumber">
+                        </div>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Profession"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-briefcase fa-fw"></i>
+                            </div>
+                            <input type="text" placeholder="Длъжност" class="form-control input-md" asp-for="Profession">
+                        </div>
+                        <span asp-validation-for="Profession" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="FacebookUrlAddress"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-facebook-square fa-fw"></i>
+                            </div>
+                            <input type="text" placeholder="Facebook адрес" class="form-control input-md" asp-for="FacebookUrlAddress">
+                        </div>
+                        <span asp-validation-for="FacebookUrlAddress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Description"></label>
+                    <div class="col-md-4">
+                        <textarea style="width:500px; height:150px;" class="form-control" width="600" rows="10" asp-for="Description"></textarea>
+                    </div>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Image"></label>
+                    <div class="col-md-4">
+                        <input style="padding-top:5px" class="input-file" asp-for="Image">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" asp-area="" asp-controller="Manage" asp-action="Edit" class="btn btn-success">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
+                        </button>
+
+                        @if (User.IsInRole(GlobalConstants.AdministratorRole) && ViewData["ActivePage"] == null)
+                        {
+                            <a asp-area="Admin" asp-controller="User" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
+
+                        }
+                        else
+                        {
+                            <a asp-area="" asp-controller="Manage" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
+
+                        }
+                        
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-2 hidden-xs">
+        <img src="@Model.ImageSource" onerror="this.src='https://www.tollmiddleschool.org/apps/pics/empty_profile_public.png'" class="img-responsive img-thumbnail ">
+    </div>
+</div>

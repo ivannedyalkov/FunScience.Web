@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PlayListingModel>
+
+@{
+    ViewData["Title"] = "Списък пиеси";
+    ViewData.AddActivePage(AdminNavPages.Plays);
+    int counter = 1;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Име</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() != 0)
+            {
+                foreach (var play in Model)
+                {
+                    <tr class="table-warning">
+                        <th scope="row">@(counter++)</th>
+                        <td>@play.Name</td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Play" asp-action="Edit" asp-route-id="@play.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-area="Admin" asp-controller="Play" asp-action="Delete" asp-route-id="@play.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" style="text-align: center;">Няма регистрирани пиеси.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

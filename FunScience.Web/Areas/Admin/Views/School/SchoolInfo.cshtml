@@ -1,0 +1,52 @@
+﻿@model School
+
+@{
+    ViewData["Title"] = "Училище";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div id="row">
+    <div class="col-md-6">
+            <h3>@Model.Name</h3>
+            <h3>@Model.Director</h3>
+    </div>
+    <div class="col-md-6">
+        <div id="map" style="width: 350px; height: 350px"></div>
+        <script>
+            var map;
+            function initMap() {
+                var myLatLng = { lat: @Model.Lat, lng: @Model.Lng };
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                });
+            }
+
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvt1pVkUw6g4YvXGHCeJ1Tq0pnz_pRdCM&callback=initMap"
+                type="text/javascript"></script>
+
+    </div>
+</div>
+

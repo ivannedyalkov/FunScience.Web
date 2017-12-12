@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Редактиране на училище";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@Html.Partial("_AddEditSchool")
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
