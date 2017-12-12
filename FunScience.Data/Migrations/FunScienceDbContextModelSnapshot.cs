@@ -29,6 +29,8 @@ namespace FunScience.Data.Migrations
 
                     b.Property<int>("SchoolId");
 
+                    b.Property<DateTime>("Time");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PlayId");

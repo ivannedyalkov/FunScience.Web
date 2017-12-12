@@ -8,8 +8,8 @@ namespace FunScience.Data.Migrations
     using System;
 
     [DbContext(typeof(FunScienceDbContext))]
-    [Migration("20171211190811_Performance")]
-    partial class Performance
+    [Migration("20171212101310_PerformaceDataTimeInitialize")]
+    partial class PerformaceDataTimeInitialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,8 @@ namespace FunScience.Data.Migrations
                     b.Property<int>("PlayId");
 
                     b.Property<int>("SchoolId");
+
+                    b.Property<DateTime>("Time");
 
                     b.HasKey("Id");
 

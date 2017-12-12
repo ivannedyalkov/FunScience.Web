@@ -7,7 +7,7 @@ namespace FunScience.Data.Models
     {
         public int Id { get; set; }
 
-        DateTime Time { get; set; }
+        public DateTime Time { get; set; }
 
         public int PlayId { get; set; }
 
