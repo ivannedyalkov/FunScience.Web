@@ -13265,11 +13265,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Service\\FunScience.Service.csproj": {
-              "projectPath": "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Service\\FunScience.Service.csproj"
-            },
             "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Data\\FunScience.Data.csproj": {
               "projectPath": "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Data\\FunScience.Data.csproj"
+            },
+            "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Service\\FunScience.Service.csproj": {
+              "projectPath": "C:\\Users\\Ivan Nedyalkov\\Documents\\Visual Studio 2017\\Projects\\C# MVC Web Development\\FunScience.Web\\FunScience.Service\\FunScience.Service.csproj"
             }
           }
         }
@@ -13283,28 +13283,28 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "3.2.0"
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.1"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.1, )"
           }
         },
         "imports": [

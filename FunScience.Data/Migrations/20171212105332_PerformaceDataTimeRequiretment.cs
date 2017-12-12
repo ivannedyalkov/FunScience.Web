@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
-
-namespace FunScience.Data.Migrations
+﻿namespace FunScience.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class PerformaceDataTimeRequiretment : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
