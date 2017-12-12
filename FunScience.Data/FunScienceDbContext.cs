@@ -17,8 +17,6 @@
 
         public DbSet<Performance> Performances { get; set; }
 
-        public int MyProperty { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Play>()

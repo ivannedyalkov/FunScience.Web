@@ -17,7 +17,7 @@
 
         [Required(ErrorMessage = "Фамилията е задължителна.")]
         [MaxLength(UserNameMaxLenght, ErrorMessage = "Не може да е по дълга от 100 символа.")]
-        [Display(Name = "Фамиля")]
+        [Display(Name = "Фамилия")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Телефонът е задължителен.")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace FunScience.Data.Models
 {
@@ -7,6 +8,7 @@ namespace FunScience.Data.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public DateTime Time { get; set; }
 
         public int PlayId { get; set; }
