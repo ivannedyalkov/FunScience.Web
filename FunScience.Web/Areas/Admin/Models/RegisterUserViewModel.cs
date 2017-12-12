@@ -13,7 +13,7 @@
 
         [Required(ErrorMessage = "Фамилията е задължителна.")]
         [MaxLength(UserNameMaxLenght, ErrorMessage = "Фамилията не може да е по дълга от 100 символа.")]
-        [Display(Name = "Фамиля")]
+        [Display(Name = "Фамилия")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Email адресът е задължителен.")]
@@ -27,7 +27,7 @@
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Потвърждаване на паролата.")]
+        [Display(Name = "Потвърждаване на паролата")]
         [Compare("Password", ErrorMessage = "Двете пароли не са еднакви.")]
         public string ConfirmPassword { get; set; }
 
