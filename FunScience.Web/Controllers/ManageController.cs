@@ -71,13 +71,13 @@
                         this.userService
                         .UserImage(model.Id));
 
-                    return View("Details", model);
+                    return View("Index", model);
                 }
 
                 return BadRequest();
             }
 
-            byte[] image = new byte[2 * 1024 * 1024];
+            byte[] image = new byte[1 * 1024 * 1024];
 
             if (model.Image != null)
             {

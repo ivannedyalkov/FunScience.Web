@@ -39,7 +39,7 @@
         [Display(Name = "Facebook")]
         public string FacebookUrlAddress { get; set; }
         
-        [ImageValidation(ErrorMessage = "Снимката трябва да е до 2 MB и с разширение .jpg, .png или .jpeg.")]
+        [ImageValidation(ErrorMessage = "Снимката трябва да е до 1 MB и с разширение .jpg, .png или .jpeg.")]
         [Display(Name = "Профилна снимка")]
         public IFormFile Image { get; set; }
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdIpeQ/mr8kqv+jhDDuJ0NwAAAAACAAAAAAAQZgAAAAEAACAAAAAMp2p+DIlwi0V1eRPnYUhZhXqCLl1zePDlyg3OSji4SAAAAAAOgAAAAAIAACAAAAB6Vg50UD8oS1DFmh31xL/Kc4VDi/yWauABDmt/2ZW6GYAAAACqpY3hOatnHNkqO+hj1xD8DxdaTqbEQXq/p5UqHmHYCryUMAamYeHJIhUcn7Nd7Lu33TpQDRu6D/ed+UQS8zYLXcCACqOMw2t89BX2Hi/EEBgl98RMTAYsXCB4Il/jy8v1PI21+R+MA750SA3Nj9p9cKWfOhHzoQFxa6D3ss5nG0AAAACSOnQpovcfKgVQk8l9W01VrUxtFMcB+aJrfYeARwAzIBYid7fOClJvxIzVZt852VUUxRDGMFKYvMKkE8tpkZ/C</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:funscience.database.windows.net,1433;Initial Catalog=FunScience;Persist Security Info=False;User ID=FunScience;Password=Test12#$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
