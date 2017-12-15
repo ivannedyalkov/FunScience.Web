@@ -1,0 +1,90 @@
+﻿@model PerformanceViewModel
+
+@{
+    ViewData["Title"] = "Изготвяне на график";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-10">
+        <form class="form-horizontal" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <div style="text-align: center" asp-validation-summary="All" class="text-danger"></div>
+                    <label class="col-md-4 control-label" asp-="Time"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar-o fa-fw">
+                                </i>
+                            </div>
+                            <input type="datetime-local" class="form-control input-md" asp-for="Time">
+                        </div>
+                        <span asp-validation-for="Time" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Plays"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-play fa-fw">
+                                </i>
+                            </div>
+                            <select  class="form-control input-md" asp-items="@Model.Plays"></select>
+                        </div>
+                        <span asp-validation-for="Plays" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Schools"></label>
+                    <div class="col-md-4">
+                        <div class="input-group othertop">
+                            <div class="input-group-addon">
+                                <i class="fa fa-map-o fa-fw">
+                                </i>
+                            </div>
+                            <select class="form-control input-md" asp-items="@Model.Schools"></select>
+                        </div>
+                        <span asp-validation-for="Schools" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" asp-for="Users"></label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-graduation-cap fa-fw"></i>
+                            </div>
+                            <select class="form-control input-md" multiple asp-items="@Model.Users"></select>
+                        </div>
+                        <span asp-validation-for="Users" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        @if (ViewData["Title"].ToString() == "Добавяна на училище")
+                        {
+                            <button type="submit" asp-area="Admin" asp-controller="School" asp-action="Create" class="btn btn-success">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
+                            </button>
+                            <a asp-area="Admin" asp-controller="School" asp-action="AddSchool" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
+
+                        }
+                        else if (ViewData["Title"].ToString() == "Редактиране на училище")
+                        {
+                            <button type="submit" asp-area="Admin" asp-controller="School" asp-action="Edit" class="btn btn-success">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
+                            </button>
+                            <a asp-area="Admin" asp-controller="School" asp-action="Edit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
+
+                        }
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
