@@ -19,11 +19,9 @@
         {
             Tests.Initialize();
 
-            this.dbOptions = Tests.DbOptionsSetUp();
+            this.db = Tests.GetDb();
 
-            this.db = Tests.GetDb(this.dbOptions);
-
-            this.schoolService = new SchoolService(db);
+            this.schoolService = new SchoolService(this.db);
             
             CreateFakeSchools();
         }

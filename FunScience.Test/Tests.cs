@@ -19,15 +19,12 @@
             }
         }
 
-        public static DbContextOptions<FunScienceDbContext> DbOptionsSetUp()
+        public static FunScienceDbContext GetDb()
         {
-           return new DbContextOptionsBuilder<FunScienceDbContext>()
+            var dbOptions = new DbContextOptionsBuilder<FunScienceDbContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
-        } 
 
-        public static FunScienceDbContext GetDb(DbContextOptions<FunScienceDbContext> dbOptions)
-        {
             return new FunScienceDbContext(dbOptions);
         }
     }

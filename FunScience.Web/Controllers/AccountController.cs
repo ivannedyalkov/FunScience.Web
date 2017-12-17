@@ -23,7 +23,7 @@
 
         [TempData]
         public string ErrorMessage { get; set; }
-        
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
@@ -45,7 +45,7 @@
 
             return RedirectToLocal(returnUrl);
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
