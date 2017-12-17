@@ -31,9 +31,9 @@
                 Lat = lat,
                 Lng = lng
             };
-            
+
             this.db.Schools.Add(school);
-            
+
             this.db.SaveChanges();
 
             return true;
