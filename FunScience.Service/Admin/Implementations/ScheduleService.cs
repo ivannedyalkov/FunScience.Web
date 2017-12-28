@@ -6,6 +6,8 @@
     using FunScience.Service.Admin.Models.Play;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Service.Admin.Models.User;
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class ScheduleService : IScheduleService
@@ -15,6 +17,11 @@
         public ScheduleService(FunScienceDbContext db)
         {
             this.db = db;
+        }
+
+        public void CreateSchedule(DateTime time, int Play, int School, IEnumerable<string> Users)
+        {
+            throw new NotImplementedException();
         }
 
         public PerformanceModel GetSchedule()
