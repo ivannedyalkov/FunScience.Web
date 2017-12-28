@@ -1,7 +1,7 @@
-﻿using FunScience.Service.Admin.Models.Performance;
-
-namespace FunScience.Service
+﻿namespace FunScience.Service
 {
+    using FunScience.Service.Admin.Models.Performance;
+
     public interface IScheduleService
     {
         PerformanceModel GetSchedule();

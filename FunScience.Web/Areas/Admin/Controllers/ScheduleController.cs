@@ -27,5 +27,23 @@
 
             return View(performanceView);
         }
+
+        [HttpPost]
+        public IActionResult CreateSchedule(PerformanceViewModel model)
+        {
+
+            if(!ModelState.IsValid)
+            {
+                var result = this.scheduleService.GetSchedule();
+
+                var performanceView = mapper.Map<PerformanceViewModel>(result);
+
+                return View(nameof(CreateSchedule), performanceView);
+            }
+
+            
+
+            return null;
+        }
     }
 }

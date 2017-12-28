@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Изготвяне на график";
+    ViewData.AddActivePage(AdminNavPages.CreateSchedule);
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -12,14 +13,14 @@
             <fieldset>
                 <div class="form-group">
                     <div style="text-align: center" asp-validation-summary="All" class="text-danger"></div>
-                    <label class="col-md-4 control-label" asp-="Time"></label>
+                    <label class="col-md-4 control-label" asp-for="Time"></label>
                     <div class="col-md-4">
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar-o fa-fw">
                                 </i>
                             </div>
-                            <input type="datetime-local" class="form-control input-md" asp-for="Time">
+                            <input type="datetime-local" style="width: 300px;" class="form-control input-md" asp-for="Time">
                         </div>
                         <span asp-validation-for="Time" class="text-danger"></span>
                     </div>
@@ -32,7 +33,7 @@
                                 <i class="fa fa-play fa-fw">
                                 </i>
                             </div>
-                            <select class="form-control input-md" asp-items="@Model.Plays"></select>
+                            <select style="width: 300px;" class="form-control input-md" asp-for="Play" asp-items="@Model.Plays"></select>
                         </div>
                         <span asp-validation-for="Plays" class="text-danger"></span>
                     </div>
@@ -45,7 +46,7 @@
                                 <i class="fa fa-map-o fa-fw">
                                 </i>
                             </div>
-                            <select class="form-control input-md" asp-items="@Model.Schools"></select>
+                            <select style="width: 300px;" class="form-control input-md" asp-for="School" asp-items="@Model.Schools"></select>
                         </div>
                         <span asp-validation-for="Schools" class="text-danger"></span>
                     </div>
@@ -57,30 +58,19 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-graduation-cap fa-fw"></i>
                             </div>
-                            <select class="form-control input-md" multiple asp-items="@Model.Users"></select>
+                            <select style="width: 300px; height: 200px;" class="form-control input-md" multiple asp-for="SelectedUsers" asp-items="@Model.Users"></select>
                         </div>
-                        <span asp-validation-for="Users" class="text-danger"></span>
+
                     </div>
                 </div>
-                <div class="form-group">
+                <small style="padding-left: 260px;">* Натиснете Ctrl за да изберете няколко служителя.</small>
+                <div class="form-group" style="margin-top: 15px;">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4">
-                        @if (ViewData["Title"].ToString() == "Добавяна на училище")
-                        {
-                            <button type="submit" asp-area="Admin" asp-controller="School" asp-action="Create" class="btn btn-success">
-                                <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
-                            </button>
-                            <a asp-area="Admin" asp-controller="School" asp-action="AddSchool" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
-
-                        }
-                        else if (ViewData["Title"].ToString() == "Редактиране на училище")
-                        {
-                            <button type="submit" asp-area="Admin" asp-controller="School" asp-action="Edit" class="btn btn-success">
-                                <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
-                            </button>
-                            <a asp-area="Admin" asp-controller="School" asp-action="Edit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
-
-                        }
+                        <button type="submit" asp-area="Admin" asp-controller="Schedule" asp-action="CreateSchedule" class="btn btn-success">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>Запиши
+                        </button>
+                        <a asp-area="Admin" asp-controller="Schedule" asp-action="CreateSchedule" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Изчисти</a>
                     </div>
                 </div>
             </fieldset>
