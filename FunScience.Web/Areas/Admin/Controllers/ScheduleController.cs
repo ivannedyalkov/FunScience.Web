@@ -44,5 +44,12 @@
 
             return Redirect(nameof(CreateSchedule));
         }
+
+        public IActionResult Schedule()
+        {
+            var schedule = this.scheduleService.Schedule();
+
+            return View(schedule);
+        }
     }
 }

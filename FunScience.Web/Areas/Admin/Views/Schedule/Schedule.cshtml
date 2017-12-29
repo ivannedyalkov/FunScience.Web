@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ScheduleServiceModel>
+
+@{
+    ViewData["Title"] = "График";
+    ViewData.AddActivePage(AdminNavPages.Schedule);
+    string format = "HH:mm dd.MM.yy";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Дата и час</th>
+                <th>Пиеса</th>
+                <th>Училище</th>
+                <th>Участници</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 1)
+            {
+                foreach (var performance in Model)
+                {
+                    <tr class="table-warning">
+                        <th scope="row">@performance.Time.ToString(format)г.</th>
+                        <td>@performance.PlayName</td>
+                        <td>@performance.SchoolName</td>
+                        <td>
+                            <ul>
+                                @foreach (var participant in performance.Participants)
+                                {
+                                    <li>@participant</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="User" asp-action="Details" asp-route-id="@performance.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-id="@performance.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" style="text-align: center;">Няма регистрирани представления.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

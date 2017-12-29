@@ -22,6 +22,8 @@
 
         public static string CreateSchedule = "CreateSchedule";
 
+        public static string Schedule = "График";
+
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
         public static string SchoolNavClass(ViewContext viewContext) => PageNavClass(viewContext, School);
@@ -33,6 +35,8 @@
         public static string CreatePlayNavClass(ViewContext viewContext) => PageNavClass(viewContext, CreatePlay);
 
         public static string CreateScheduleNavClass(ViewContext viewContext) => PageNavClass(viewContext, CreateSchedule);
+
+        public static string ScheduleNavClass(ViewContext viewContext) => PageNavClass(viewContext, Schedule);
 
         public static string PlaysNavClass(ViewContext viewContext) => PageNavClass(viewContext, Plays);
 

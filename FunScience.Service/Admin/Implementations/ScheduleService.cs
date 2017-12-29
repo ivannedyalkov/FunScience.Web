@@ -5,6 +5,7 @@
     using FunScience.Data.Models;
     using FunScience.Service.Admin.Models.Performance;
     using FunScience.Service.Admin.Models.Play;
+    using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Service.Admin.Models.User;
     using System;
@@ -45,7 +46,7 @@
 
             this.db.Performances.Add(performance);
 
-            this.db.SaveChanges();
+            this.db.SaveChanges(); 
         }
 
         public PerformanceModel GetSchedule()
@@ -69,6 +70,23 @@
                         .ThenBy(u => u.LastName)
                         .ToList()
             };
+        }
+
+        public IEnumerable<ScheduleServiceModel> Schedule()
+        {
+            return this.db.Performances
+                            .Select(p => new ScheduleServiceModel
+                            {
+                                Id = p.Id,
+                                Time = p.Time,
+                                PlayName = p.Play.Name,
+                                SchoolName = p.School.Name,
+                                Participants = p.Users
+                                                .Select(u => string.Concat(u.User.FirstName, " ", u.User.LastName))
+                                                .ToList()
+                            })
+                            .OrderBy(p => p.Time)
+                            .ToList();
         }
     }
 }
