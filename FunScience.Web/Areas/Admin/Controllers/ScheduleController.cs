@@ -31,7 +31,6 @@
         [HttpPost]
         public IActionResult CreateSchedule(PerformanceViewModel model)
         {
-
             if(!ModelState.IsValid)
             {
                 var result = this.scheduleService.GetSchedule();
@@ -41,9 +40,9 @@
                 return View(nameof(CreateSchedule), performanceView);
             }
 
-            
+            this.scheduleService.CreateSchedule(model.Time, model.Play, model.School, model.SelectedUsers);
 
-            return null;
+            return Redirect(nameof(CreateSchedule));
         }
     }
 }

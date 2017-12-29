@@ -8,6 +8,6 @@
     {
         PerformanceModel GetSchedule();
 
-        void CreateSchedule(DateTime time, int Play, int School, IEnumerable<string> Users);
+        void CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users);
     }
 }

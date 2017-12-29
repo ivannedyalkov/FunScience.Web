@@ -2,6 +2,7 @@
 {
     using AutoMapper.QueryableExtensions;
     using FunScience.Data;
+    using FunScience.Data.Models;
     using FunScience.Service.Admin.Models.Performance;
     using FunScience.Service.Admin.Models.Play;
     using FunScience.Service.Admin.Models.School;
@@ -19,9 +20,32 @@
             this.db = db;
         }
 
-        public void CreateSchedule(DateTime time, int Play, int School, IEnumerable<string> Users)
+        public void CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users)
         {
-            throw new NotImplementedException();
+            var play = this.db.Plays.FirstOrDefault(p => p.Id == playId);
+
+            var school = this.db.Schools.FirstOrDefault(s => s.Id == schoolId);
+
+            var performance = new Performance
+            {
+                Time = time,
+                Play = play,
+                PlayId = playId,
+                School = school,
+                SchoolId = schoolId
+            };
+
+            foreach (var user in users)
+            {
+                performance.Users.Add(new UserPerformance { UserId = user });
+            }
+
+            this.db.Plays.FirstOrDefault(p => p.Id == playId).Performances.Add(performance);
+            this.db.Schools.FirstOrDefault(s => s.Id == schoolId).Performances.Add(performance);
+
+            this.db.Performances.Add(performance);
+
+            this.db.SaveChanges();
         }
 
         public PerformanceModel GetSchedule()
