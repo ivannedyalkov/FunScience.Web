@@ -19,20 +19,23 @@
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
         private readonly IUserService userService;
+        private readonly ISchoolService schoolService;
         private readonly IUserScheduleService scheduleService;
         private readonly IMapper mapper;
 
         public ManageController(
           UserManager<User> userManager,
           SignInManager<User> signInManager,
-            IUserService userService,
-            IUserScheduleService scheduleService,
-            IMapper mapper
+             IUserService userService,
+             ISchoolService schoolService,
+             IUserScheduleService scheduleService,
+             IMapper mapper
             )
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.userService = userService;
+            this.schoolService = schoolService;
             this.scheduleService = scheduleService;
             this.mapper = mapper;
         }
@@ -63,7 +66,7 @@
 
             return View(userView);
         }
-        
+
         [HttpPost]
         public IActionResult Edit(DetailsUserViewModel model)
         {
@@ -158,6 +161,13 @@
             var completeSchedule = this.scheduleService.GetSchedule(this.userManager.GetUserId(this.User));
 
             return View(completeSchedule);
+        }
+
+        public IActionResult SchoolInfo(string name)
+        {
+            var school = this.schoolService.SchoolInfo(name);
+
+            return View(school);
         }
 
         private void AddErrors(IdentityResult result)

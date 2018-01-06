@@ -17,5 +17,7 @@
         IEnumerable<SchoolListingModel> ListOfSchools();
 
         School SchoolInfo(int id);
+
+        School SchoolInfo(string name);
     }
 }

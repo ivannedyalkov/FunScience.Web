@@ -118,5 +118,19 @@
 
             return this.db.Schools.FirstOrDefault(s => s.Id == id);
         }
+
+        public School SchoolInfo(string name)
+        {
+            var school = this.db
+                .Schools
+                .FirstOrDefault(s => s.Name == name);
+
+            if (school == null)
+            {
+                throw new ArgumentNullException("No such school in database.");
+            }
+
+            return this.db.Schools.FirstOrDefault(s => s.Name == name);
+        }
     }
 }

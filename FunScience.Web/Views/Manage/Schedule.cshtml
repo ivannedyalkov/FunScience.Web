@@ -28,7 +28,9 @@
                     <tr class="table-warning">
                         <th scope="row">@performance.Time.ToString(format)г.</th>
                         <td>@performance.PlayName</td>
-                        <td>@performance.SchoolName</td>
+                        <td>
+                            <a asp-action="SchoolInfo" asp-route-name="@performance.SchoolName"><strong>@performance.SchoolName</strong></a>
+                        </td>
                     </tr>
                 }
             }
