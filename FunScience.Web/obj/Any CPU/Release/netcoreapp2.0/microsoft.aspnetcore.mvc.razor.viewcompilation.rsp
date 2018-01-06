@@ -29,12 +29,15 @@ C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Develop
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Home\Plays.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\ChangePassword.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\Index.cshtml
+--file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\Schedule.cshtml
+--file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\SchoolInfo.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\_Layout.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Manage\_ManageNav.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\Error.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_Details.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_Layout.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_LoginPartial.cshtml
+--file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_SchoolInfo.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_StatusMessage.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\Shared\_ValidationScriptsPartial.cshtml
 --file=C:\Users\Ivan Nedyalkov\Documents\Visual Studio 2017\Projects\C# MVC Web Development\FunScience.Web\FunScience.Web\Views\_ViewImports.cshtml

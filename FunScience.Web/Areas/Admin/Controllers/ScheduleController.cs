@@ -40,7 +40,18 @@
                 return View(nameof(CreateSchedule), performanceView);
             }
 
-            this.scheduleService.CreateSchedule(model.Time, model.Play, model.School, model.SelectedUsers);
+            var create = this.scheduleService.CreateSchedule(model.Time, model.Play, model.School, model.SelectedUsers);
+
+            if (!create)
+            {
+                var result = this.scheduleService.GetSchedule();
+
+                var performanceView = mapper.Map<PerformanceViewModel>(result);
+
+                performanceView.StatusMessage = $"ErrorГрешка. Моля преверете дали служителят не записан в друго предтавление по това време.";
+
+                return View(nameof(CreateSchedule), performanceView);
+            }
 
             return Redirect(nameof(CreateSchedule));
         }

@@ -31,5 +31,7 @@
 
         [Required(ErrorMessage = "Моля въведете поне един участник в пиесата.")]
         public IEnumerable<string> SelectedUsers { get; set; }
+
+        public string StatusMessage { get; set; }
     }
 }

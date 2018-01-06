@@ -9,7 +9,7 @@
     {
         PerformanceModel GetSchedule();
 
-        void CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users);
+        bool CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users);
 
         IEnumerable<ScheduleServiceModel> Schedule();
     }

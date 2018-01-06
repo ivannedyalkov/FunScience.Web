@@ -21,8 +21,26 @@
             this.db = db;
         }
 
-        public void CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users)
+        public bool CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users)
         {
+            if (time < DateTime.UtcNow)
+            {
+                return false;
+            }
+            
+            if (
+                !users.Any(u => this.db
+                                      .Performances
+                                      .Any((p => p.Users
+                                                   .Any(un => string.Concat(un.User.FirstName, " ", un.User.FirstName) == u 
+                                                   && un.Performance.Time.AddHours(1) < time) 
+                                                   )))
+                )
+            {
+                return false;
+            }
+
+
             var play = this.db.Plays.FirstOrDefault(p => p.Id == playId);
 
             var school = this.db.Schools.FirstOrDefault(s => s.Id == schoolId);
@@ -46,7 +64,9 @@
 
             this.db.Performances.Add(performance);
 
-            this.db.SaveChanges(); 
+            this.db.SaveChanges();
+
+            return true;
         }
 
         public PerformanceModel GetSchedule()
