@@ -13,9 +13,9 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Име</th>
-                <th>Actions</th>
+                <th class="col-md-1">#</th>
+                <th class="col-md-6">Име</th>
+                <th class="col-md-5"></th>
             </tr>
         </thead>
         <tbody>
@@ -27,9 +27,9 @@
                         <th scope="row">@(counter++)</th>
                         <td>@school.Name</td>
                         <td>
-                            <a asp-area="Admin" asp-controller="School" asp-action="SchoolInfo" asp-route-id="@school.Id" class="btn btn-primary btn-sm">View</a>
-                            <a asp-area="Admin" asp-controller="School" asp-action="Edit" asp-route-id="@school.Id" class="btn btn-warning btn-sm">Edit</a>
-                            <a asp-area="Admin" asp-controller="School" asp-action="Delete" asp-route-id="@school.Id" class="btn btn-danger btn-sm">Delete</a>
+                            <a asp-area="Admin" asp-controller="School" asp-action="SchoolInfo" asp-route-id="@school.Id" class="btn btn-primary btn-sm">Прегледай</a>
+                            <a asp-area="Admin" asp-controller="School" asp-action="Edit" asp-route-id="@school.Id" class="btn btn-warning btn-sm">Промени</a>
+                            <a asp-area="Admin" asp-controller="School" asp-action="Delete" asp-route-id="@school.Id" class="btn btn-danger btn-sm">Изтрий</a>
                         </td>
                     </tr>
                 }

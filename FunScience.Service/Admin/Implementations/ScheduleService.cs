@@ -83,6 +83,7 @@
                                 SchoolName = p.School.Name,
                                 Participants = p.Users
                                                 .Select(u => string.Concat(u.User.FirstName, " ", u.User.LastName))
+                                                .OrderBy(x => x)
                                                 .ToList()
                             })
                             .OrderBy(p => p.Time)

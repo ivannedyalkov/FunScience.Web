@@ -12,9 +12,9 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Име</th>
-                <th>Actions</th>
+                <th class="col-md-1">#</th>
+                <th class="col-md-8">Име</th>
+                <th class="col-md-3"></th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +26,8 @@
                         <th scope="row">@(counter++)</th>
                         <td>@play.Name</td>
                         <td>
-                            <a asp-area="Admin" asp-controller="Play" asp-action="Edit" asp-route-id="@play.Id" class="btn btn-warning btn-sm">Edit</a>
-                            <a asp-area="Admin" asp-controller="Play" asp-action="Delete" asp-route-id="@play.Id" class="btn btn-danger btn-sm">Delete</a>
+                            <a asp-area="Admin" asp-controller="Play" asp-action="Edit" asp-route-id="@play.Id" class="btn btn-warning btn-sm">Промени</a>
+                            <a asp-area="Admin" asp-controller="Play" asp-action="Delete" asp-route-id="@play.Id" class="btn btn-danger btn-sm">Изтрий</a>
                         </td>
                     </tr>
                 }
