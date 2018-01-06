@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using FunScience.Data.Models;
+    using FunScience.Service;
     using FunScience.Service.Admin;
     using FunScience.Web.Infrastructure;
     using FunScience.Web.Infrastructure.Helpers;
@@ -18,18 +19,21 @@
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
         private readonly IUserService userService;
+        private readonly IUserScheduleService scheduleService;
         private readonly IMapper mapper;
 
         public ManageController(
           UserManager<User> userManager,
           SignInManager<User> signInManager,
             IUserService userService,
+            IUserScheduleService scheduleService,
             IMapper mapper
             )
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.userService = userService;
+            this.scheduleService = scheduleService;
             this.mapper = mapper;
         }
 
@@ -148,7 +152,14 @@
 
             return RedirectToAction(nameof(ChangePassword));
         }
-        
+
+        public IActionResult Schedule()
+        {
+            var completeSchedule = this.scheduleService.GetSchedule(this.userManager.GetUserId(this.User));
+
+            return View(completeSchedule);
+        }
+
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)

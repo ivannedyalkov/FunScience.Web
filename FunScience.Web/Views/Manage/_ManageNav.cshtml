@@ -3,5 +3,10 @@
 <ul class="nav nav-pills nav-stacked">
     <li class="@ManageNavPages.DetailsNavClass(ViewContext)"><a asp-action="Index" asp-route-id="@this.userManager.GetUserId(User)">Профил</a></li>
     <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword">Промяна на парола</a></li>
+    <li><hr /></li>
+    @if (!User.IsInRole(GlobalConstants.AdministratorRole))
+    {
+        <li class="@ManageNavPages.ScheduleNavClass(ViewContext)"><a asp-action="Schedule">График</a></li>
+    }
 </ul>
 

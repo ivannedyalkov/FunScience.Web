@@ -1,6 +1,6 @@
-﻿using AutoMapper.QueryableExtensions;
-namespace FunScience.Service.Admin.Implementations
+﻿namespace FunScience.Service.Admin.Implementations
 {
+    using AutoMapper.QueryableExtensions;
     using FunScience.Data;
     using FunScience.Data.Models;
     using FunScience.Service.Admin.Models.Play;

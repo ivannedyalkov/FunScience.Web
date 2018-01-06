@@ -1,0 +1,44 @@
+﻿@model IEnumerable<UserScheduleServiceModel>
+
+@{
+    ViewData["Title"] = "Schedule";
+    ViewData.AddActivePage(ManageNavPages.Schadule);
+    string format = "HH:mm dd.MM.yy";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<div class="row">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="col-md-2">Дата и час</th>
+                <th class="col-md-5">Пиеса</th>
+                <th class="col-md-5">Училище</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 1)
+            {
+                foreach (var performance in Model)
+                {
+                    <tr class="table-warning">
+                        <th scope="row">@performance.Time.ToString(format)г.</th>
+                        <td>@performance.PlayName</td>
+                        <td>@performance.SchoolName</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" style="text-align: center;">Няма регистрирани представления.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

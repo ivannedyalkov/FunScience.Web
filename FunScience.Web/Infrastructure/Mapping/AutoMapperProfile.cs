@@ -6,6 +6,7 @@
     using FunScience.Service.Admin.Models.Play;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Service.Admin.Models.User;
+    using FunScience.Service.Models;
     using FunScience.Web.Areas.Admin.Models;
     using FunScience.Web.Models.ManageViewModels;
     using Microsoft.AspNetCore.Mvc.Rendering;
@@ -48,17 +49,10 @@
                 .ForMember(p => p.Plays, cnf => cnf.MapFrom(p => p.Plays))
                 .ForMember(s => s.Schools, cnf => cnf.MapFrom(s => s.Schools))
                 .ForMember(u => u.Users, cnf => cnf.MapFrom(u => u.Users));
+
+            this.CreateMap<Performance, UserScheduleServiceModel>()
+                .ForMember(us => us.PlayName, cnf => cnf.MapFrom(p => p.Play.Name))
+                .ForMember(us => us.SchoolName, cnf => cnf.MapFrom(p => p.School.Name));
         }
-        
-        //в Service
-
-        //using AutoMapper.QuerybleExtansions;
-
-        // this.db.Users.ProjectTo<>UserViewModel>().ToList();
-
-        //при променени полета
-
-        // this.CreateMap<ApplicationUser, UserViewModel>()
-        //.ForMember(u => u.MailAddress, cnf => cnf.MapFrom(u => u.Email));
     }
 }

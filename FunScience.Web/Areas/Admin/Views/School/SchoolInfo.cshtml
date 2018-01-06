@@ -23,10 +23,10 @@
 <div id="row">
     <div class="col-md-6">
             <h3>@Model.Name</h3>
-            <h3>@Model.Director</h3>
+            <h4 style="font-weight:normal;">Директор: <strong>@Model.Director</strong></h4>
     </div>
     <div class="col-md-6">
-        <div id="map" style="width: 350px; height: 350px"></div>
+        <div id="map" style="width: 350px; height: 350px; border: 2px solid"></div>
         <script>
             var map;
             function initMap() {
