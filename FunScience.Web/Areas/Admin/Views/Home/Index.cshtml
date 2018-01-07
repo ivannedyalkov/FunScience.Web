@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Model.Count() > 1)
+            @if (Model.Count() != 1)
             {
                 foreach (var user in Model)
                 {

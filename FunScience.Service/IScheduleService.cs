@@ -12,5 +12,13 @@
         bool CreateSchedule(DateTime time, int playId, int schoolId, IEnumerable<string> users);
 
         IEnumerable<ScheduleServiceModel> Schedule();
+
+        ScheduleListingModel DeleteInfo(int id);
+
+        void Delete(int id);
+
+        PerformanceEditModel PerformanceInfo(int id);
+
+        bool Edit(int id, DateTime time, int playId, int schoolId, IEnumerable<string> users);
     }
 }

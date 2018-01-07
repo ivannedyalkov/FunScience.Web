@@ -3,6 +3,7 @@
     using AutoMapper;
     using FunScience.Service;
     using FunScience.Service.Admin;
+    using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Web.Areas.Admin.Models;
     using Microsoft.AspNetCore.Mvc;
 
@@ -61,6 +62,68 @@
             var schedule = this.scheduleService.Schedule();
 
             return View(schedule);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var performance = this.scheduleService.PerformanceInfo(id);
+
+            if (performance == null)
+            {
+                return BadRequest();
+            }
+
+            var performanceView = mapper.Map<PerformanceEditViewModel>(performance);
+
+            performanceView.StatusMessage = StatusMessage;
+
+            return View(performanceView);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(PerformanceEditViewModel model)
+        {
+            var performance = this.scheduleService.PerformanceInfo(model.Id);
+
+            if (!ModelState.IsValid)
+            {
+
+                return View(nameof(Edit), performance.Id);
+            }
+
+
+            var result = this.scheduleService.Edit(
+                                    model.Id,
+                                    model.Time,
+                                    model.Play,
+                                    model.School,
+                                    model.SelectedUsers);
+
+
+
+            if (result)
+            {
+                StatusMessage = $"Представлението беше променен.";
+            
+                return RedirectToAction(nameof(Schedule));
+            }
+
+            return RedirectToAction(nameof(Edit), performance.Id);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var model = this.scheduleService.DeleteInfo(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Destroy(ScheduleListingModel model)
+        {
+            this.scheduleService.Delete(model.Id);
+
+            return RedirectToAction(nameof(Schedule));
         }
     }
 }

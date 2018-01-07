@@ -102,6 +102,5 @@
 
             return RedirectToAction(nameof(Plays));
         }
-
     }
 }

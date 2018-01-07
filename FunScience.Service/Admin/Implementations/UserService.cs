@@ -46,6 +46,7 @@
         {
             var user = this.db
                 .Users
+                .ProjectTo<DeleteUserModel>()
                 .FirstOrDefault(u => u.Id == id);
 
             if (user == null)
@@ -53,17 +54,14 @@
                 throw new ArgumentNullException("No such user in database.");
             }
 
-            return this.db
-                .Users
-                .Where(u => u.Id == id)
-                .ProjectTo<DeleteUserModel>()
-                .FirstOrDefault();
+            return user;
         }
 
         public DetailsUserModel Details(string id)
         {
             var user = this.db
                 .Users
+                .ProjectTo<DetailsUserModel>()
                 .FirstOrDefault(u => u.Id == id);
 
             if (user == null)
@@ -71,11 +69,7 @@
                 throw new ArgumentNullException("No such user in database.");
             }
 
-            return this.db
-                .Users
-                .Where(u => u.Id == id)
-                .ProjectTo<DetailsUserModel>()
-                .FirstOrDefault();
+            return user;
         }
 
         public void Edit(string id, string firstName, string lastName, string phoneNumber, string profession, string facebookUrlAddress, string description, byte[] image)

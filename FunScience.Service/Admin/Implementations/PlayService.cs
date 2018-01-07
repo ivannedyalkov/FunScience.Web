@@ -63,6 +63,7 @@
         {
             var play = this.db
                 .Plays
+                .ProjectTo<PlayListingModel>()
                 .FirstOrDefault(p => p.Id == id);
 
             if (play == null)
@@ -70,10 +71,7 @@
                 throw new ArgumentNullException("No such school in database.");
             }
 
-            return this.db
-                .Plays
-                .ProjectTo<PlayListingModel>()
-                .FirstOrDefault(p => p.Id == id);
+            return play;
         }
 
         public void Delete(int id)

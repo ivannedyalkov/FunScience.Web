@@ -69,6 +69,7 @@
         {
             var school = this.db
                 .Schools
+                .ProjectTo<SchoolListingModel>()
                 .FirstOrDefault(s => s.Id == id);
 
             if (school == null)
@@ -76,10 +77,7 @@
                 throw new ArgumentNullException("No such school in database.");
             }
 
-            return this.db
-                .Schools
-                .ProjectTo<SchoolListingModel>()
-                .FirstOrDefault(s => s.Id == id);
+            return school;
         }
 
         public void Delete(int id)
@@ -116,7 +114,7 @@
                 throw new ArgumentNullException("No such school in database.");
             }
 
-            return this.db.Schools.FirstOrDefault(s => s.Id == id);
+            return school;
         }
 
         public School SchoolInfo(string name)
@@ -130,7 +128,7 @@
                 throw new ArgumentNullException("No such school in database.");
             }
 
-            return this.db.Schools.FirstOrDefault(s => s.Name == name);
+            return school;
         }
     }
 }

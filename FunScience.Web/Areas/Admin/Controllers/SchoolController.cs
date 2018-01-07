@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using FunScience.Service;
+    using FunScience.Service.Admin.Models.School;
     using FunScience.Web.Areas.Admin.Models;
     using Microsoft.AspNetCore.Mvc;
 
@@ -95,6 +96,21 @@
             var school = this.schoolService.SchoolInfo(id);
 
             return View(school);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var model = this.schoolService.DeleteInfo(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Destroy(SchoolListingModel model)
+        {
+            this.schoolService.Delete(model.Id);
+
+            return RedirectToAction(nameof(Schools));
         }
     }
 }

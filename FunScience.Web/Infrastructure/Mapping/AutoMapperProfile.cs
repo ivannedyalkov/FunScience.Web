@@ -4,6 +4,7 @@
     using FunScience.Data.Models;
     using FunScience.Service.Admin.Models.Performance;
     using FunScience.Service.Admin.Models.Play;
+    using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Service.Admin.Models.User;
     using FunScience.Service.Models;
@@ -50,7 +51,16 @@
                 .ForMember(s => s.Schools, cnf => cnf.MapFrom(s => s.Schools))
                 .ForMember(u => u.Users, cnf => cnf.MapFrom(u => u.Users));
 
+            this.CreateMap<PerformanceEditModel, PerformanceEditViewModel>()
+                .ForMember(p => p.Plays, cnf => cnf.MapFrom(p => p.Plays))
+                .ForMember(s => s.Schools, cnf => cnf.MapFrom(s => s.Schools))
+                .ForMember(u => u.Users, cnf => cnf.MapFrom(u => u.Users));
+
             this.CreateMap<Performance, UserScheduleServiceModel>()
+                .ForMember(us => us.PlayName, cnf => cnf.MapFrom(p => p.Play.Name))
+                .ForMember(us => us.SchoolName, cnf => cnf.MapFrom(p => p.School.Name));
+
+            this.CreateMap<Performance, ScheduleListingModel>()
                 .ForMember(us => us.PlayName, cnf => cnf.MapFrom(p => p.Play.Name))
                 .ForMember(us => us.SchoolName, cnf => cnf.MapFrom(p => p.School.Name));
         }

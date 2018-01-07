@@ -1,0 +1,16 @@
+﻿@model ScheduleListingModel
+
+@{
+    ViewData["Title"] = "Изтриване на представление";
+    string format = "HH:mm на dd.MM.yy";
+}
+
+<h2>Изтриване</h2>
+
+<h4>Сигурни ли сте, че искате да изтрите представлението в @Model.SchoolName от @Model.Time.ToString(format)г.</h4>
+<form method="post" asp-area="Admin" asp-controller="Schedule" asp-action="Destroy">
+    <input type="hidden" asp-for=@Model.Id />
+    <button type="submit" class="btn btn-danger">Да</button>
+    <a class="btn btn-success" href="/Admin/School/Schools">Не</a>
+</form>
+
