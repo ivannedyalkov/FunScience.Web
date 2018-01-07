@@ -2,7 +2,6 @@
 {
     using AutoMapper;
     using FunScience.Service;
-    using FunScience.Service.Admin;
     using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Web.Areas.Admin.Models;
     using Microsoft.AspNetCore.Mvc;
@@ -49,7 +48,7 @@
 
                 var performanceView = mapper.Map<PerformanceViewModel>(result);
 
-                performanceView.StatusMessage = $"ErrorГрешка. Моля преверете дали служителят не записан в друго предтавление по това време.";
+                performanceView.StatusMessage = $"ErrorГрешка. Моля преверете датата.";
 
                 return View(nameof(CreateSchedule), performanceView);
             }
@@ -98,15 +97,14 @@
                                     model.Play,
                                     model.School,
                                     model.SelectedUsers);
-
-
-
+            
             if (result)
             {
-                StatusMessage = $"Представлението беше променен.";
-            
+
                 return RedirectToAction(nameof(Schedule));
             }
+            
+            StatusMessage = $"ErrorГрешка. Моля преверете датата.";
 
             return RedirectToAction(nameof(Edit), performance.Id);
         }

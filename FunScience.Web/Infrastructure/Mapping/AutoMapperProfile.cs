@@ -12,7 +12,6 @@
     using FunScience.Web.Models.ManageViewModels;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using System;
-    using System.Linq;
 
     public class AutoMapperProfile : Profile
     {
