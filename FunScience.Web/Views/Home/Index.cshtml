@@ -19,12 +19,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center form-title">Login</h4>
+                <h4 class="modal-title text-center form-title">Вход за потребители</h4>
             </div>
             <div class="modal-body padtrbl">
 
                 <div class="login-box-body">
-                    <p class="login-box-msg">Sign in to start your session</p>
+                    <p class="login-box-msg">Влез в профила си от тук.</p>
                     <div class="form-group">
                         <form asp-area="" asp-controller="Account" asp-action ="Login" id="loginForm">
                             <style>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <!----- password -------------->
-                                <input class="form-control" asp-for="Password" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
+                                <input class="form-control" asp-for="Password" placeholder="Парола" id="loginpsw" type="password" autocomplete="off" />
                                 <span asp-validation-for="Password" class="text-danger"></span>
                                 <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
                                 <!---Alredy exists  ! -->
@@ -54,12 +54,12 @@
                                 <div class="col-xs-12">
                                     <div class="checkbox icheck">
                                         <label>
-                                            <input type="checkbox" id="loginrem"> Remember Me
+                                            <input type="checkbox" id="loginrem"> Запомни ме
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-green btn-block btn-flat">Sign In</button>
+                                    <button type="submit" class="btn btn-green btn-block btn-flat">Влез</button>
                                 </div>
                             </div>
                         </form>
@@ -89,7 +89,7 @@
 Образователен театър  е член на Центърът за изследвания и иновации в областта на неформалното образование към Софийския университет  „Св. Кл. Охридски“.
 </p>
                 <hr class="bottom-line">
-            </div>
+           <!-- </div>
             <div class="feature-info">
                 <div class="fea">
                     <div class="col-md-4">
@@ -123,13 +123,13 @@
                             <i class="fa fa-trophy"></i>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
 </section>
 <!--/ feature-->
-<!--Organisations-->
+<!--Organisations
 <section id="organisations" class="section-padding">
     <div class="container">
         <div class="row">
@@ -168,8 +168,8 @@
         </div>
     </div>
 </section>
-<!--/ Organisations-->
-<!--Cta-->
+<!--/ Organisations
+<!--Cta
 <section id="cta-2">
     <div class="container">
         <div class="row">
@@ -186,8 +186,8 @@
         </div>
     </div>
 </section>
-<!--/ Cta-->
-<!--work-shop-->
+<!--/ Cta
+<!--work-shop
 <section id="work-shop" class="section-padding">
     <div class="container">
         <div class="row">
@@ -229,8 +229,8 @@
         </div>
     </div>
 </section>
-<!--/ work-shop-->
-<!--Faculity member-->
+<!--/ work-shop
+<!--Faculity member
 <section id="faculity-member" class="section-padding">
     <div class="container">
         <div class="row">
@@ -287,8 +287,8 @@
         </div>
     </div>
 </section>
-<!--/ Faculity member-->
-<!--Testimonial-->
+<!--/ Faculity member
+<!--Testimonial
 <section id="testimonial" class="section-padding">
     <div class="container">
         <div class="row">
@@ -312,8 +312,8 @@
         </div>
     </div>
 </section>
-<!--/ Testimonial-->
-<!--Courses-->
+<!--/ Testimonial
+<!--Courses
 <section id="courses" class="section-padding">
     <div class="container">
         <div class="row">
@@ -389,8 +389,8 @@
         </div>
     </div>
 </section>
-<!--/ Courses-->
-<!--Pricing-->
+<!--/ Courses
+<!--Pricing
 <section id="pricing" class="section-padding">
     <div class="container">
         <div class="row">
@@ -401,13 +401,13 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="price-table">
-                    <!-- Plan  -->
+                    <!-- Plan  
                     <div class="pricing-head">
                         <h4>Monthly Plan</h4>
                         <span class="fa fa-usd curency"></span> <span class="amount">200</span>
                     </div>
 
-                    <!-- Plean Detail -->
+                    <!-- Plean Detail 
                     <div class="price-in mart-15">
                         <a href="#" class="btn btn-bg green btn-block">PURCHACE</a>
                     </div>
@@ -415,13 +415,13 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="price-table">
-                    <!-- Plan  -->
+                    <!-- Plan  
                     <div class="pricing-head">
                         <h4>Quarterly Plan</h4>
                         <span class="fa fa-usd curency"></span> <span class="amount">800</span>
                     </div>
 
-                    <!-- Plean Detail -->
+                    <!-- Plean Detail
                     <div class="price-in mart-15">
                         <a href="#" class="btn btn-bg yellow btn-block">PURCHACE</a>
                     </div>
@@ -429,13 +429,13 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="price-table">
-                    <!-- Plan  -->
+                    <!-- Plan  
                     <div class="pricing-head">
                         <h4>Year Plan</h4>
                         <span class="fa fa-usd curency"></span> <span class="amount">1200</span>
                     </div>
 
-                    <!-- Plean Detail -->
+                    <!-- Plean Detail 
                     <div class="price-in mart-15">
                         <a href="#" class="btn btn-bg red btn-block">PURCHACE</a>
                     </div>
@@ -444,8 +444,8 @@
         </div>
     </div>
 </section>
-<!--/ Pricing-->
-<!--Contact-->
+<!--/ Pricing
+<!--Contact
 <section id="contact" class="section-padding">
     <div class="container">
         <div class="row">
@@ -480,7 +480,7 @@
                 </div>
 
                 <div class="col-xs-12">
-                    <!-- Button -->
+                    <!-- Button 
                     <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
                 </div>
             </form>

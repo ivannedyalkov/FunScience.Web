@@ -552,8 +552,9 @@ Footer
 ************************************/
 .footer {
     padding: 60px 0 20px;
-    background: #111;
-    color: #ccc;
+    background: #5FCF80;
+    color: black;
+    margin-top: 100px;
 }
 .footer a {
     color: #fff;
