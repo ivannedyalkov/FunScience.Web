@@ -28,6 +28,7 @@
                 return false;
             }
 
+            #region ValidatePerformance
             //if (
             //    !users.Any(u => this.db
             //                          .Performances
@@ -39,7 +40,7 @@
             //{
             //    return false;
             //}
-
+            #endregion
 
             var play = this.db.Plays.FirstOrDefault(p => p.Id == playId);
 

@@ -1,12 +1,11 @@
 ﻿namespace FunScience.Service.Implementation
 {
     using AutoMapper.QueryableExtensions;
-    using System.Collections.Generic;
-    using System.Linq;
     using FunScience.Data;
     using FunScience.Service.Models;
-    using FunScience.Data.Models;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class UserScheduleService : IUserScheduleService
     {
