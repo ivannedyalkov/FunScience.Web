@@ -4,6 +4,7 @@
     using FunScience.Data;
     using FunScience.Data.Models;
     using FunScience.Service.Admin.Models.School;
+    using FunScience.Service.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -47,7 +48,7 @@
 
             if (school == null)
             {
-                throw new ArgumentNullException("No such school in database.");
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
             }
 
             if (school.Name != name && this.db.Schools.Any(s => s.Name == name && s.Id != id))
@@ -74,7 +75,7 @@
 
             if (school == null)
             {
-                throw new ArgumentNullException("No such school in database.");
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
             }
 
             return school;
@@ -86,7 +87,7 @@
 
             if (school == null)
             {
-                throw new ArgumentNullException("No such school in database.");
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
             }
 
             this.db.Schools.Remove(school);
@@ -111,7 +112,7 @@
 
             if (school == null)
             {
-                throw new ArgumentNullException("No such school in database.");
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
             }
 
             return school;
@@ -125,7 +126,7 @@
 
             if (school == null)
             {
-                throw new ArgumentNullException("No such school in database.");
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
             }
 
             return school;

@@ -8,6 +8,7 @@
     using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Service.Admin.Models.User;
+    using FunScience.Service.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -120,7 +121,7 @@
 
             if (performance == null)
             {
-                throw new ArgumentNullException("No such performance in database.");
+                throw new ArgumentNullException(ErrorConstants.PerformanceDoesNotExist);
             }
 
             return performance;
@@ -132,7 +133,7 @@
 
             if (performance == null)
             {
-                throw new ArgumentNullException("No such performance in database.");
+                throw new ArgumentNullException(ErrorConstants.PerformanceDoesNotExist);
             }
 
             this.db.Performances.Remove(performance);
@@ -170,7 +171,7 @@
 
             if (performance.Id == 0)
             {
-                throw new ArgumentNullException("No such performance in database.");
+                throw new ArgumentNullException(ErrorConstants.PerformanceDoesNotExist);
             }
 
             return performance;
@@ -189,9 +190,17 @@
 
             var performance = this.db.Performances.FirstOrDefault(p => p.Id == id);
 
-            if (play == null || school == null || performance == null)
+            if (play == null)
             {
-                throw new ArgumentNullException("No such records in database.");
+                throw new ArgumentNullException(ErrorConstants.PlayDoesNotЕxist);
+            }
+            else if (school == null)
+            {
+                throw new ArgumentNullException(ErrorConstants.SchoolDoesNotЕxist);
+            }
+            else if (performance == null)
+            {
+                throw new ArgumentNullException(ErrorConstants.PerformanceDoesNotExist);
             }
 
             this.db.Performances.Remove(performance);
