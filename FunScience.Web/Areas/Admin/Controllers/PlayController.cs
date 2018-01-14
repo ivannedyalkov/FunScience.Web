@@ -4,6 +4,7 @@
     using FunScience.Service.Admin;
     using FunScience.Service.Admin.Models.Play;
     using FunScience.Web.Areas.Admin.Models;
+    using FunScience.Web.Infrastructure;
     using Microsoft.AspNetCore.Mvc;
 
     public class PlayController : AdminBaseController
@@ -39,7 +40,7 @@
                 return Redirect(nameof(Plays));
             }
 
-            model.StatusMessage = "ErrorВече съществува пиеса с това име.";
+            model.StatusMessage = MessageConstants.PlayWithSameNameExist;
 
             return View(nameof(CreatePlay), model);
         }
@@ -80,7 +81,7 @@
                                     model.Name);
             if (result)
             {
-                StatusMessage = $"Пиесата беше променена.";
+                StatusMessage = MessageConstants.PlayWasChanged;
 
                 return RedirectToAction(nameof(Edit), new { id = model.Id });
             }

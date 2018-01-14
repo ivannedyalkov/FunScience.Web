@@ -4,6 +4,7 @@
     using FunScience.Service;
     using FunScience.Service.Admin.Models.School;
     using FunScience.Web.Areas.Admin.Models;
+    using FunScience.Web.Infrastructure;
     using Microsoft.AspNetCore.Mvc;
 
     public class SchoolController : AdminBaseController
@@ -39,7 +40,7 @@
                 return Redirect(nameof(Schools));
             }
 
-            model.StatusMessage = "ErrorВече съществува училище с това име.";
+            model.StatusMessage = MessageConstants.SchoolWithSameNameExist;
 
             return View(nameof(AddSchool), model);
         }
@@ -76,7 +77,7 @@
                                     model.Lng);
             if (result)
             {
-                StatusMessage = $"Профилът беше променен.";
+                StatusMessage = MessageConstants.SchoolWasChanged;
 
                 return RedirectToAction(nameof(Edit), new { id = model.Id });
             }

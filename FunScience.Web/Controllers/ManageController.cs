@@ -84,7 +84,7 @@
                 return BadRequest();
             }
 
-            byte[] image = new byte[1 * 1024 * 1024];
+            byte[] image = new byte[GlobalConstants.MaximumImageSize];
 
             if (model.Image != null)
             {
@@ -106,7 +106,7 @@
                                     model.Description,
                                     image);
 
-            StatusMessage = $"Профилът беше променен.";
+            StatusMessage = MessageConstants.ProfileChanged;
 
             if (User.IsInRole(GlobalConstants.AdministratorRole) && this.userManager.GetUserId(User) != model.Id)
             {
@@ -151,7 +151,7 @@
             }
 
             await signInManager.SignInAsync(user, isPersistent: false);
-            StatusMessage = "Паролата е променена.";
+            StatusMessage = MessageConstants.PasswordChanged;
 
             return RedirectToAction(nameof(ChangePassword));
         }

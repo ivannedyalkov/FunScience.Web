@@ -4,6 +4,7 @@
     using FunScience.Service;
     using FunScience.Service.Admin.Models.Schedule;
     using FunScience.Web.Areas.Admin.Models;
+    using FunScience.Web.Infrastructure;
     using Microsoft.AspNetCore.Mvc;
 
     public class ScheduleController : AdminBaseController
@@ -48,7 +49,7 @@
 
                 var performanceView = mapper.Map<PerformanceViewModel>(result);
 
-                performanceView.StatusMessage = $"ErrorГрешка. Моля преверете датата.";
+                performanceView.StatusMessage = MessageConstants.ScheduleWrongDateTime;
 
                 return View(nameof(CreateSchedule), performanceView);
             }
@@ -101,10 +102,11 @@
             if (result)
             {
 
+
                 return RedirectToAction(nameof(Schedule));
             }
-            
-            StatusMessage = $"ErrorГрешка. Моля преверете датата.";
+
+            StatusMessage = MessageConstants.ScheduleWrongDateTime;
 
             return RedirectToAction(nameof(Edit), performance.Id);
         }

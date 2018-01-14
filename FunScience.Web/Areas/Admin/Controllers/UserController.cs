@@ -5,6 +5,7 @@
     using FunScience.Service.Admin;
     using FunScience.Service.Admin.Models.User;
     using FunScience.Web.Areas.Admin.Models;
+    using FunScience.Web.Infrastructure;
     using FunScience.Web.Infrastructure.Helpers;
     using FunScience.Web.Models.ManageViewModels;
     using Microsoft.AspNetCore.Identity;
@@ -60,7 +61,7 @@
                     return RedirectToAction("Index", "Home");
                 }
                 
-                model.StatusMessage = $"ErrorВече съществува потребител с този Email {model.Email}";
+                model.StatusMessage = $"{MessageConstants.UserWithSameEmailExist} {model.Email}.";
 
             }
 
