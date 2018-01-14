@@ -45,7 +45,7 @@
 
                         Port = 587,
 
-                        Credentials = new System.Net.NetworkCredential("funsciencetheater@gmail.com", "Maria1234"),
+                        Credentials = new System.Net.NetworkCredential("funsciencetheater@gmail.com", "****************"),
 
                         EnableSsl = true
                     };
