@@ -1,0 +1,64 @@
+﻿@model ContactViewModel
+
+@{
+    ViewData["Title"] = "Контакти";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            @if (ViewBag.Message == null)
+            {
+                <div class="header-section text-center">
+                    <h2>ПИШЕТЕ НИ</h2>
+                    <hr class="bottom-line">
+                </div>
+                <form method="post" action="/contacts/contacts">
+                    <div class="col-md-6 col-sm-6 col-xs-12 left">
+                        <div class="form-group">
+                            <input asp-for="Name" placeholder="Име" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Email" placeholder="Имейл адрес" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Subject" placeholder="Заглавие" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 right">
+                        <div class="form-group">
+                            <textarea rows="5" cols="15" placeholder="Съдържание" asp-for="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <button type="submit" class="form contact-form-button light-form-button oswald light">ИЗПРАТИ</button>
+                    </div>
+                </form>
+            }
+            <div>
+                <div>
+                    @if (ViewBag.Message != null)
+                    {
+                        <div>@ViewBag.Message</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+

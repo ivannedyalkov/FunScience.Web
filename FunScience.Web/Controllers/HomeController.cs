@@ -12,11 +12,6 @@ namespace FunScience.Web.Controllers
         {
             return View(new LoginViewModel { });
         }
-
-        public IActionResult Plays()
-        {
-            return View();
-        }
         
         public IActionResult Error()
         {
