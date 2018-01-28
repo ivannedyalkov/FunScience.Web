@@ -5,7 +5,7 @@
     public class ContactViewModel
     {
         [Required(ErrorMessage = "Името е задължително.")]
-        [StringLength(20, MinimumLength = 5)]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Името трябва да е между 5 и 20 символа.")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Email адресът е задължителен.")]

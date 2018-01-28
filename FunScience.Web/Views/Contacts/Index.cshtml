@@ -6,45 +6,92 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<a style="margin-left: 61.5px" href="/">
+    <img src="~/img/green-back-button-icon-65921.png" width="30" />
+</a>
 
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div id="row">
+
+</div>
 
 <section class="section-padding">
     <div class="container">
         <div class="row">
-            @if (ViewBag.Message == null)
-            {
-                <div class="header-section text-center">
-                    <h2>ПИШЕТЕ НИ</h2>
-                    <hr class="bottom-line">
-                </div>
-                <form method="post" action="/contacts/contacts">
-                    <div class="col-md-6 col-sm-6 col-xs-12 left">
-                        <div class="form-group">
-                            <input asp-for="Name" placeholder="Име" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input asp-for="Email" placeholder="Имейл адрес" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input asp-for="Subject" placeholder="Заглавие" class="form-control" />
-                            <span asp-validation-for="Subject" class="text-danger"></span>
-                        </div>
+            <div class="col-md-8">
+                @if (ViewBag.Message == null)
+                {
+                    <div class="header-section text-center">
+                        <h2>ПИШЕТЕ НИ</h2>
+                        <hr class="bottom-line">
                     </div>
+                    <form method="post" action="/contacts/contacts">
+                        <div class="col-md-6 col-sm-6 col-xs-12 left">
+                            <div class="form-group">
+                                <input asp-for="Name" placeholder="Име" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Email" placeholder="Имейл адрес" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Subject" placeholder="Заглавие" class="form-control" />
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-6 col-sm-6 col-xs-12 right">
-                        <div class="form-group">
-                            <textarea rows="5" cols="15" placeholder="Съдържание" asp-for="Message" class="form-control"></textarea>
-                            <span asp-validation-for="Message" class="text-danger"></span>
+                        <div class="col-md-6 col-sm-6 col-xs-12 right">
+                            <div class="form-group">
+                                <textarea rows="6" cols="15" placeholder="Съдържание" asp-for="Message" class="form-control"></textarea>
+                                <span asp-validation-for="Message" class="text-danger"></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-xs-12">
-                        <button type="submit" class="form contact-form-button light-form-button oswald light">ИЗПРАТИ</button>
-                    </div>
-                </form>
-            }
+                        <div class="col-xs-12">
+                            <button type="submit" class="form contact-form-button light-form-button oswald light">ИЗПРАТИ</button>
+                        </div>
+                    </form>
+                }
+            </div>
+            <div class="col-md-4">
+                <div id="map" style="width: 350px; height: 350px; border: 2px solid"></div>
+                <script>
+                    var map;
+                    function initMap() {
+                        /**/
+                        var myLatLng = { lat: 42.699607, lng: 23.337447 };
+                        /**/
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 17,
+                            center: myLatLng
+                        });
+
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                        });
+                    }
+
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvt1pVkUw6g4YvXGHCeJ1Tq0pnz_pRdCM&callback=initMap"
+                        type="text/javascript"></script>
+
+            </div>
             <div>
                 <div>
                     @if (ViewBag.Message != null)

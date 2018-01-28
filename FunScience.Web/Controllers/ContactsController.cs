@@ -33,6 +33,8 @@
                     SbBody.Append(Environment.NewLine);
                     SbBody.Append("Имейл - " + model.Email + Environment.NewLine);
                     SbBody.Append(Environment.NewLine);
+                    SbBody.Append("Заглавие - " + model.Subject + Environment.NewLine);
+                    SbBody.Append(Environment.NewLine);
                     SbBody.Append("Съдържание - " + model.Message + Environment.NewLine);
 
                     msz.To.Add("funsciencetheater@gmail.com"); 
@@ -45,7 +47,7 @@
 
                         Port = 587,
 
-                        Credentials = new System.Net.NetworkCredential("funsciencetheater@gmail.com", "****************"),
+                        Credentials = new System.Net.NetworkCredential("funsciencetheater@gmail.com", "Maria1234"),
 
                         EnableSsl = true
                     };
