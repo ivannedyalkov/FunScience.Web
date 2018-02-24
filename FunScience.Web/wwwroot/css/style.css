@@ -138,9 +138,7 @@ Banner
 	color: #fff;
 	margin-top: 30px;
 }
-.quote .btn{
-    background-color: 
-}
+
 .modal-dialog {
     width: 600px;
     margin: 150px auto;
@@ -551,7 +549,7 @@ Contact Us
 Footer
 ************************************/
 .footer {
-    padding: 60px 0 20px;
+    padding: 20px 0 20px;
     background: #5FCF80;
     color: black;
     margin-top: 100px;
@@ -597,7 +595,6 @@ Footer
     list-style: none;
     padding: 0;
     margin: 30px 0 40px;
-    padding: 40px 0 0;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .btn-submit:hover, .btn-submit:focus{
@@ -661,7 +658,7 @@ Footer
     width: 24%;
     padding: 10px 10px;
     margin-bottom: 15px;
-    color: #fff;: #fafafa;
+    color: #fff; 
     border: 1px solid rgba(119, 81, 81, 0.34);
     width: 24%;
     margin-bottom: 15px;

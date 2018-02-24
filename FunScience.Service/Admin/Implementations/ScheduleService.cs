@@ -205,7 +205,7 @@
 
             this.db.Performances.Remove(performance);
             this.db.Plays.FirstOrDefault(p => p.Id == playId).Performances.Remove(performance);
-            this.db.Schools.FirstOrDefault(s => s.Id == schoolId).Performances.Add(performance);
+            this.db.Schools.FirstOrDefault(s => s.Id == schoolId).Performances.Remove(performance);
 
             var newPerformance = new Performance
             {
