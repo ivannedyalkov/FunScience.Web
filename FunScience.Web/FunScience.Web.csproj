@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-FunScience.Web-D57566C6-ADA6-4593-A48F-204452B29333</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\img\mentor.jpg" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />

@@ -10,7 +10,7 @@
         public const string SchoolWithSameNameExist = Error + "Вече съществува училище с това име.";
         public const string SchoolWasChanged = "Училището беше променено.";
 
-        public const string ScheduleWrongDateTime = Error + "Грешка. Моля преверете датата.";
+        public const string ScheduleWrongDateTime = Error + "Грешка. Моля преверете датата или участниците в предтавлението.";
 
         public const string UserWithSameEmailExist = Error + "Вече съществува потребител с този Email";
 

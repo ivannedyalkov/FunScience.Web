@@ -19,6 +19,8 @@
         {
             this.CreateMap<User, UsersListingModel>();
 
+            this.CreateMap<User, UserViewModel>();
+
             this.CreateMap<User, DetailsUserModel>();
 
             this.CreateMap<User, DeleteUserModel>();

@@ -51,5 +51,11 @@
         {
             return View();
         }
+
+        [Route("/activities/scientificАrticles")]
+        public IActionResult ScientificАrticles()
+        {
+            return View();
+        }
     }
 }

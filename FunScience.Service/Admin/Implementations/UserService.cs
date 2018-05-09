@@ -3,6 +3,7 @@
     using AutoMapper.QueryableExtensions;
     using FunScience.Data;
     using FunScience.Service.Admin.Models.User;
+    using FunScience.Service.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -114,6 +115,19 @@
             return this.db
                 .Users
                 .Any(u => u.Id == id);
+        }
+
+        public IEnumerable<UserViewModel> GetUsers()
+        {
+            var allUsers = this.db
+                .Users
+                .ProjectTo<UserViewModel>()
+                .OrderBy(u => u.FirstName)
+                .ThenBy(u => u.LastName)
+                .ThenBy(u => u.Profession)
+                .ToList();
+
+            return allUsers;
         }
     }
 }

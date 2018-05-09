@@ -1,0 +1,59 @@
+﻿@model List<UserViewModel>
+
+@{
+    ViewData["Title"] = "Актьорски състав";
+    int size = Model.Count;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<section id="faculity-member" class="section-padding">
+    <a style="margin-left: 61.5px" href="/">
+        <img src="~/img/green-back-button-icon-65921.png" width="30" />
+    </a>
+    <div class="container">
+        <div class="header-section text-center">
+            <h2>Meet Our Faculty Member</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+            <hr class="bottom-line">
+        </div>
+
+
+        @if (size != 0)
+        {
+            @foreach (var row in Model.ToArray().Split(3))
+            {
+                <div class="row">
+                    @foreach (var user in row)
+                    {
+                        string imgSrc = String.Empty;
+                        if (user.UserPhoto != null)
+                        {
+                            var base64 = Convert.ToBase64String(user.UserPhoto);
+                            imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+                        }
+
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="pm-staff-profile-container">
+                                <div class="pm-staff-profile-image-wrapper text-center">
+                                    <div class="pm-staff-profile-image">
+
+                                        <img src="@imgSrc" alt="" class="img-thumbnail img-circle" />
+                                    </div>
+                                </div>
+                                <div class="pm-staff-profile-details text-center">
+                                    <p class="pm-staff-profile-name">@String.Concat(user.FirstName, " ", user.LastName)</p>
+                                    <p class="pm-staff-profile-title">@user.Profession</p>
+
+                                    <p class="pm-staff-profile-bio">@user.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+</section>
+
+

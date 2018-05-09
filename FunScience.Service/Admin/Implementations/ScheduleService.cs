@@ -28,18 +28,32 @@
             {
                 return false;
             }
+            
+            List<Performance> performanceValidator = this.db.Performances
+                                                   .Where(u => u.Users
+                                                                .Any(x => users.Contains(x.UserId)))
+                                                   .Where(x => x.Time > DateTime.UtcNow)
+                                                   .ToList();
+
+            foreach (var p in performanceValidator)
+            {
+                if (!(p.Time.AddHours(1).CompareTo(time) <= 0 || p.Time.AddHours(-1).CompareTo(time) >= 0))
+                {
+                    return false;
+                }
+            }
 
             #region ValidatePerformance
             //if (
             //    !users.Any(u => this.db
             //                          .Performances
             //                          .Any((p => p.Users
-            //                                       .Any(un => string.Concat(un.User.FirstName, " ", un.User.FirstName) == u 
+            //                                       .Any(un => un.UserId == u 
             //                                       && un.Performance.Time.AddHours(1) < time) 
             //                                       )))
             //    )
             //{
-            //    return false;
+            //  return false;
             //}
             #endregion
 
@@ -182,6 +196,20 @@
             if (time < DateTime.UtcNow)
             {
                 return false;
+            }
+
+            List<Performance> performanceValidator = this.db.Performances
+                                                            .Where(u => u.Users
+                                                                         .Any(x => users.Contains(x.UserId)))
+                                                            .Where(x => x.Time > DateTime.UtcNow)
+                                                            .ToList();
+
+            foreach (var p in performanceValidator)
+            {
+                if (!(p.Time.AddHours(1).CompareTo(time) <= 0 || p.Time.AddHours(-1).CompareTo(time) >= 0))
+                {
+                    return false;
+                }
             }
 
             var play = this.db.Plays.FirstOrDefault(p => p.Id == playId);
