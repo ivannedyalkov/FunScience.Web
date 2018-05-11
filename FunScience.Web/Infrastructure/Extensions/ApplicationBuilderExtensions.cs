@@ -51,7 +51,7 @@
                             LastName = "Nikolova"
                         };
 
-                        await userManager.CreateAsync(adminUser, "Maria1234");
+                        await userManager.CreateAsync(adminUser, "*********");
 
                         await userManager.AddToRoleAsync(adminUser, adminName);
                     }
